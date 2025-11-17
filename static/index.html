@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>AI Interview (WebRTC + Realtime)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>AI Interview</h1>
+      <div class="row">
+        <label for="topic">Topic</label>
+        <select id="topic">
+          <option>Product Designer</option>
+          <option>PCB Designer</option>
+          <option>Firmware / Software Developer (Embedded)</option>
+          <option>Integration Engineer</option>
+          <option>Domain Expert & V&V Engineer</option>
+          <option>Mechanical Designer</option>
+          <option>Procurement Specialist</option>
+        </select>
+        <button id="startBtn" type="button">Start Interview</button>
+        <button id="endBtn" type="button" disabled>End</button>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="panel">
+        <h2>Live Interview (AI questions only)</h2>
+        <div id="aiStream" class="log"></div>
+        <audio id="aiAudio" autoplay></audio>
+        <div class="hint">Your speech is captured, not shown. Speak after each question.</div>
+      </section>
+
+      <section class="panel">
+        <h2>Analysis</h2>
+        <div class="row">
+          <button id="analyzeBtn" disabled>Analyze Session</button>
+          <span id="analyzeStatus"></span>
+        </div>
+        <div id="scoreSummary"></div>
+        <div id="analysisTableWrapper"></div>
+        <div id="analysisSections"></div>
+      </section>
+    </main>
+
+    <footer>
+      <small>Voice: Indian-English male • Whisper + server VAD • Realtime WebRTC</small>
+    </footer>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
